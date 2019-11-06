@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="金融市场投资，不管哪门哪派，如果想稳定盈利（可简单理解为靠投资生存，而不是一锤子买卖，运气好赚了钱就去销户，运气不好就卧倒装死）有一点至关重要——搞清楚自己投资系统背后的逻辑到底是什么？ 通常来说，股价的波动会受到以下两方面的影响：  公司长期的基本面表现 市场预期和人性（情绪）  在金融市场，要想做好投资交易，对于以上两点的理解非常重要，缺一不可。 一、投资的本质是前瞻，前瞻即预期所有股票都一样">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于市场预期与人性">
+<meta property="og:url" content="http://yoursite.com/2019/11/06/use-expectation-errors/index.html">
+<meta property="og:site_name" content="Psychehack">
+<meta property="og:description" content="金融市场投资，不管哪门哪派，如果想稳定盈利（可简单理解为靠投资生存，而不是一锤子买卖，运气好赚了钱就去销户，运气不好就卧倒装死）有一点至关重要——搞清楚自己投资系统背后的逻辑到底是什么？ 通常来说，股价的波动会受到以下两方面的影响：  公司长期的基本面表现 市场预期和人性（情绪）  在金融市场，要想做好投资交易，对于以上两点的理解非常重要，缺一不可。 一、投资的本质是前瞻，前瞻即预期所有股票都一样">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://n.sinaimg.cn/sports/97f9af30/20191106/WeiXinTuPian_20191106114351.png">
+<meta property="og:updated_time" content="2019-11-06T03:44:56.372Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于市场预期与人性">
+<meta name="twitter:description" content="金融市场投资，不管哪门哪派，如果想稳定盈利（可简单理解为靠投资生存，而不是一锤子买卖，运气好赚了钱就去销户，运气不好就卧倒装死）有一点至关重要——搞清楚自己投资系统背后的逻辑到底是什么？ 通常来说，股价的波动会受到以下两方面的影响：  公司长期的基本面表现 市场预期和人性（情绪）  在金融市场，要想做好投资交易，对于以上两点的理解非常重要，缺一不可。 一、投资的本质是前瞻，前瞻即预期所有股票都一样">
+<meta name="twitter:image" content="https://n.sinaimg.cn/sports/97f9af30/20191106/WeiXinTuPian_20191106114351.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/06/use-expectation-errors/">
+
+
+
+
+
+  <title>关于市场预期与人性 | Psychehack</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Psychehack</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">恶大莫过于肤浅</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/use-expectation-errors/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范斌">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Psychehack">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于市场预期与人性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T11:39:55+08:00">
+                2019-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/金融交易/" itemprop="url" rel="index">
+                    <span itemprop="name">金融交易</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>金融市场投资，不管哪门哪派，如果想稳定盈利（可简单理解为靠投资生存，而不是一锤子买卖，运气好赚了钱就去销户，运气不好就卧倒装死）有一点至关重要——搞清楚自己投资系统背后的逻辑到底是什么？</p>
+<p>通常来说，股价的波动会受到以下两方面的影响：</p>
+<ol>
+<li>公司长期的基本面表现</li>
+<li>市场预期和人性（情绪）</li>
+</ol>
+<p>在金融市场，要想做好投资交易，对于以上两点的理解非常重要，缺一不可。</p>
+<h5 id="一、投资的本质是前瞻，前瞻即预期"><a href="#一、投资的本质是前瞻，前瞻即预期" class="headerlink" title="一、投资的本质是前瞻，前瞻即预期"></a>一、投资的本质是前瞻，前瞻即预期</h5><p>所有股票都一样，左右股价长期运动方向的第一大因子是基本面，然而就股票中短期的走势而言，基本面往往会让位于市场预期以及预期变化之下所引发的市场情绪。</p>
+<p>有时候，我们会看到公司基本面最新的财报数据向好或者向坏，股价短时间却往相反方向运动，原因就在这里。</p>
+<p>切记！</p>
+<blockquote>
+<p>已经发生过的事实不会对股票未来价格产生额外的影响，也就是说，股票走势和历史信息无关，只和未来预期有关。</p>
+</blockquote>
+<p>懂了这一点就会明白，为什么勤奋研究读遍万字报告，付出大量时间和汗水，基于一只股票过去的表现推导出的某个结果往往是错的。</p>
+<p>如何理解这里的所说的「预期」呢？</p>
+<p>预期是指人对特定事务/事件未来发展方向的普遍看法。预期是主观的，当然就会有所不同。</p>
+<p>交易之所以会达成，就是因为在某一个价位上，一定同时有两股力量抱有完全相反的预期，比如1000块的茅台有人觉得贵，有人觉得便宜，觉得贵的人就把手里的股票卖给觉得便宜的那群人，于是交易就达成了。</p>
+<p>交易者是根据什么来判断1000块钱的茅台贵不贵呢？因素有很多，比如“短期长得多了”，“以前估值是10倍，现在变成了30倍”、“感觉大盘要调整了”、甚至是“中美贸易摩擦”、“货币政策”等等。</p>
+<p>不过，大部分人尤其是机构投资者还是基于公司已经发布的财报信息，特别是业绩增速来作为决策判断。也因此，股价的运行逻辑可以简单抽象为以下的过程：</p>
+<p>（1）某公司公布最新一季财报 →（2）市场参与者对公司未来的业绩产生预期，并在某个价格区间上达成一致 →（3）公司更新财报 →（4）业绩符合市场预期：强化参与者对未来的这种预期，股价可能表现平稳；业绩超出市场预期：市场开始纠偏，股价往其中一个方向剧烈波动 →（5）形成新的市场预期，并在某个价格区间上达成一致，直到下一次的财报发布。</p>
+<p>循环往复，形成闭环。</p>
+<p>所以，对股票的主观认识与未来呈现出来的事实越接近，股价就越容易朝选择的方向运动，获利的概率相应地就越大。</p>
+<p>举例说明，涪陵榨菜发布半年报，上半年实现营收10.86亿元，同比增长2.11%；净利润3.15亿元，同比增长3.14%。第二天没任何悬念，直接一字跌停被摁在地上动弹不得。</p>
+<p>跌停的逻辑是什么？不就是增速降了一点吗，可还是正增长啊！营收和净利润比去年还多了啊！为什么会跌呢？毛利率还略微提高了，ROE估计还是能维持在30%左右，在行业里也看不到像样的竞争对手，长期竞争力并未改变啊！榨菜这个行业又不会消失，它在中国有广大的消费人群，平时都吃这个牌子榨菜的很多，为什么会跌呢？</p>
+<p>如此思考的童鞋，只能说明你对资本市场，对股价运行逻辑的理解还非常肤浅。</p>
+<p>涪陵榨菜此前的市场估值是35倍-40倍的PE（TTM），因此对于这类公司而言，增长动能尤其重要！增长就意味着一切！什么意思呢？市场通常会给这类公司比较高的估值，里面就包含了市场对公司高速增长的预期。业绩一旦不达预期，股价暴跌就是很平常的事情。</p>
+<p>涪陵榨菜2017和2018年度的业绩增速分别是61%和59%，市场预期即使大概率无法保持这么高的增长，增速下滑到30%左右也是可以接受的。但结果出来，离最低的市场预期都相差十万八千里。在这里，不要以为同比转负才叫下滑，只要比市场预期低就叫下滑。如果比市场预期低得多，股价只能被摁在地板上摩擦。</p>
+<p>所以，高估值白马股的股价如逆水行舟，不进则退，没有中间状态，它必须年年保持高增长，而且最好是超预期增长。</p>
+<p>投资者如何知道市场对一家公司未来的一致性预期呢？</p>
+<p>通常，一些金融数据提供商比如国内的wind，国外的彭博交易终端，都会把市场上覆盖某家公司的卖方分析报告中的业绩预测结果汇总，并且进行均值处理，这个平均值其实就是大家常说的“市场一致性预期”。</p>
+<p>此外，一些公司会在年报、业绩说明会、电话会议、甚至是公开宣传中向市场报告新一年的业绩目标，这种来自上市公司本身的业绩指引对市场预期的影响力要来得更大。</p>
+<p>比如，茅台每年都会在年报中披露下一年的经营计划和经营目标，过去5年几乎每一年最后财报出来都超过此前定下的目标，股价在这种‘超预期’的影响下节节攀升。</p>
+<p>再比如，2018年初泰禾的黄老板召开发布会，公开喊出2018年的小目标是完成2000亿。资本市场当时就震惊了，一拥而入，股价一个月翻了一倍，接着又在之后的11个月里跌了70%。最后的结果是，泰禾2018年业绩勉勉强强冲上千亿。</p>
+<p>因此，很多时候，市场在情绪的作用下，即使严重偏离了未来的事实，价格仍然会沿着错误的方向继续运动。但长期来讲，理性总会回归，市场会自行进行纠偏，参与者形成新的预期合力，推动股价往接近事实的一端回归。</p>
+<h5 id="二、市场预期和人性"><a href="#二、市场预期和人性" class="headerlink" title="二、市场预期和人性"></a>二、市场预期和人性</h5><p>金融市场背后的东西，除了市场预期，往往都是殊途同归的回到人性上。</p>
+<p>索罗斯《金融炼金术》、霍华德《周期》、达里奥《宏观经济运行框架》这些书中都有关于人性的描述，这并不奇怪，因为大到国家经济的运行，小到股票股价的波动，市场本质都是人性的集合，从来都没变过。</p>
+<p>股市是人性的放大器，它可以用最有效的方式让人失去理智。</p>
+<p>比如，下跌的过程里，对大多数人来说，会理所应当的产生恐慌心理，在这种心理的作用下，股价越跌，人性让你对于它未来的预期就相应调低，最终在一个难以再忍受的价格上进行抛售，就算一直空仓的人，也很难抵抗弱点去抄底。</p>
+<p>股票连续上涨，人们也往往会对它产生巨大的预期透支——一涨遮百丑。人们也抵抗不住“踏空比亏钱都难受”的人性弱点，疯狂进入，欢欢喜喜去当接盘侠。</p>
+<p>一个非常典型的例子是2019年一季度大盘上涨20%，去排队开户的人变得越来越多，他们在之后几个月的回调中却又一脸茫然。很多时候人性就是这么简单，也正是由于人性的存在，才会在某些时点上将市场预期几何倍地放大，与此对应的就是股价大幅波动。</p>
+<p>这注定了必然永远存在一小撮人，他们能够抓住大部分人的心理弱点，并以此克制自己内心的弱点，极大程度的在这个市场上获取财富。为什么他们能在金融市场上赚到超额收益？本质上，财富是通过套利带来的结果而已。这里所谓的套利，一般人的理解是不同资产价值从偏差到收敛之间的套利，典型的就比如当期和远期的期指合约之间的套利，场外场内ETF基金套利，可转债套利等等。</p>
+<p>当然这种说法并不完全，更深层次的，它还体现在认知套利和人性上的套利。</p>
+<p>别人不知道的东西，你知道了就有赚钱的机会，又或者你和别人持完全相反的观点，最终事实证明你是对的，这同样也是赚钱的机会。一部分投资者喜欢盯着股价波动，喜欢跟风，另一部分投资者盯着公司价值，人弃我取，这也是套利。</p>
+<p>又比如，一些投资者喜欢短线快速进出博差价，另一些投资者推崇价值投资，长期捂股不动，分享公司成长带来的收益，同样也属于套利。再比如，一些人在股价遭遇某些事件影响，大幅下跌后做逆向投资也是一种套利。</p>
+<p>在网络技术和自动交易系统高度发达的今天，之前很多流行的套利机会都被逐渐被抹平了，比如股指期货套利、ETF套利和可转债套利，从最近两三年的情况看，这里面赚钱的机会越来越少。</p>
+<p>而基于人性和认知的套利，亘古而长存。</p>
+<h5 id="三、市场预期带来的启示与思考"><a href="#三、市场预期带来的启示与思考" class="headerlink" title="三、市场预期带来的启示与思考"></a>三、市场预期带来的启示与思考</h5><p>读懂一家公司的基本面，还不能构成赚钱的充分条件，它顶多是一个必要条件。很多时候，即使准确判断出公司未来的业绩能够不断增长，可还是无法在股市中赚到钱。</p>
+<p>另外一个必要条件是：<u><strong>投资者的认知能够与市场主流共识相契合。</strong></u></p>
+<p>注意，前者（对基本面的理解）是基础，是前提，也是战略问题。通过加深对基本面的研究，来降低判断失误的概率，也就是提升交易的胜率。而后者（对市场和人性的把握）是战术的问题，两个组合在一起，也就是通常我们说的“认清世界的真相”。</p>
+<p>比如这位投资人在港股打拼多年，认为港股是一个极端变态的市场，充满挫败感。</p>
+<p><img src="https://n.sinaimg.cn/sports/97f9af30/20191106/WeiXinTuPian_20191106114351.png" alt=""></p>
+<p>他的问题有两个：</p>
+<p><strong>1）对未来基本面的判断必须准确</strong></p>
+<p>从这位投资人的描述当中可知，其重仓或者看重的标的90%业绩都是持续不断增长的，ROE也持续在高位，显然他的选股能力在公司基本面的研究上还是过关的。</p>
+<p><strong>2）主观认知必须与市场主流认知形成共识</strong></p>
+<p>这位投资人的股票业绩虽然在增长，但是股价就是不涨，估值反而越来愈低，也就是说，虽然看对了基本面，但市场并不认！所以还是赚不到钱。</p>
+<p>这种现象背后的大背景是——随着美联储从2017年开始加息缩表，资金不断流出港股市场（香港是自由货币兑换），港股出现了罕见的流动性缺失。因此市场上所有的存量资金都一窝蜂去搞大盘股，把大盘蓝筹的估值搞的高高的，小盘成长股被彻底边缘化。</p>
+<p><strong>因此，基于以上的理解，不难发现，要想赚钱，就要花大力气研究和揣摩市场主流预期是什么，只有这样才能保证自己和市场先生的脚步节奏一致。</strong></p>
+<p>更难的是，如果过早的认清真相，而这种真相并不被市场主流预期所认可，往往又会变得孤独和痛苦，甚至是怀疑自己，也就很可能等不到事实发生那一天，到最后很可能心态已经崩溃。</p>
+<h6 id="超额收益的真正来源是预期差"><a href="#超额收益的真正来源是预期差" class="headerlink" title="超额收益的真正来源是预期差"></a>超额收益的真正来源是预期差</h6><p>西格尔教绶在其巨著《投资者的未来》中用大量的事实论证了一个观点，即——</p>
+<blockquote>
+<p>股票的长期收益并不依赖于实际的利润增长情况，而是取决于实际的利润增长与投资者预期的利润增长之间的差异。</p>
+</blockquote>
+<p>按上述逻辑，我们可以发现，想要在金融市场中赚取超额收益，归根到底就是要寻找预期差，也就是你的认知和市场上大多数人所不同，未来某个时点证明你更接近事实真相，赚钱也就成了自然而然的事。</p>
+<p>所以，不要考虑去买入海天、恒瑞、爱尔这些基本面靓丽，估值也很高的股票，因为它们的预期已经被打满。这时候去投资是极其危险的，比如A股曾经的大牛股老板电器、索菲亚，以及港股前一阵暴跌的维他奶集团就是前车之鉴。</p>
+<h6 id="驾驭人性"><a href="#驾驭人性" class="headerlink" title="驾驭人性"></a>驾驭人性</h6><p>这个时代，由于信息的高速流动，人性变成了更加有趣的东西，但同时，也使得心理层面的“信息不对称”被迅速放大。</p>
+<p>所有符合人性的，都是干起来轻松毫不费力的事情，相比刻苦学习，更多人喜欢看电视刷剧；相比自己去认真看完几本书，大多数人喜欢听罗振宇、樊登说书；相比坚持锻炼，拥有健康的身体，大多数人喜欢躺在床上什么都不做日复一日活在舒适圈中。</p>
+<p>就拿炒股这件事来说，多的是喜欢问哪支股票代码可以赚钱，指数跌到多少可以抄底，大家都想一夜暴富。少的是能够远离羊群，独立思考，理性决策的人。</p>
+<p>有的人在某些瞬间突然踌躇满志，打足鸡血，想着征程是星辰大海，但是用不了多久，人性就会自然而然驱使着他朝着大队人马的方向涌动而去。</p>
+<p>如果你属于以上种种的范畴，基本上决定了你也是被收割那批人。</p>
+<p>大道至简，那些充满传奇经历的伟大投资者，对人性有着超越常人的理解，在万众狂热时谋篇布局，在山崩地陷时冷静出击，成就非凡。</p>
+<p>如果你要利用大部分人的人性弱点进行套利，就必然要在更高的领域超越它，自己首先要克制它才能实现。</p>
+<p>而改变自身人性的弱点，往往始于一些不经意的细节和一些重要的节点，比如某次投资失利的反思，某次赚了很多钱但内心并不感到膨胀；某一次你站在大多数人群的对立面去思考问题，在未来的时点上证明自己是正确的。</p>
+<p>抓住细节，这都是进化历程中最美好的遗珠，然后朝着这条路在漫长的人生里一次又一次的试错和迭代。</p>
+<p>直到有一天，你会发现大部分人在某件事上、某一次投资机会中一窝蜂涌入，而你内心里却毫无波澜，内心强大到可以凌驾于大部分人，并使他们人性的弱点能够为你所用。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/29/beat-consensus/" rel="next" title="浅谈一致性预期">
+                <i class="fa fa-chevron-left"></i> 浅谈一致性预期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">范斌</p>
+              <p class="site-description motion-element" itemprop="description">生活观察笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、投资的本质是前瞻，前瞻即预期"><span class="nav-number">1.</span> <span class="nav-text">一、投资的本质是前瞻，前瞻即预期</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、市场预期和人性"><span class="nav-number">2.</span> <span class="nav-text">二、市场预期和人性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、市场预期带来的启示与思考"><span class="nav-number">3.</span> <span class="nav-text">三、市场预期带来的启示与思考</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#超额收益的真正来源是预期差"><span class="nav-number">3.1.</span> <span class="nav-text">超额收益的真正来源是预期差</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#驾驭人性"><span class="nav-number">3.2.</span> <span class="nav-text">驾驭人性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范斌</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
